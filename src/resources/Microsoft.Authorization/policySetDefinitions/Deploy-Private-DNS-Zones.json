@@ -484,6 +484,42 @@
           "description": "Private DNS Zone Identifier"
         }
       },
+      "azureSQLDBPrivateDnsZoneId": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "displayName": "azureSQLDBPrivateDnsZoneId",
+          "strongType": "Microsoft.Network/privateDnsZones",
+          "description": "Private DNS Zone Identifier"
+        }
+      },
+      "azureMariaDBPrivateDnsZoneId": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "displayName": "azureMariaDBPrivateDnsZoneId",
+          "strongType": "Microsoft.Network/privateDnsZones",
+          "description": "Private DNS Zone Identifier"
+        }
+      },
+      "azureMySQLDBPrivateDnsZoneId": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "displayName": "azureMySQLDBPrivateDnsZoneId",
+          "strongType": "Microsoft.Network/privateDnsZones",
+          "description": "Private DNS Zone Identifier"
+        }
+      },
+      "azurePostgreSQLDBPrivateDnsZoneId": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+          "displayName": "azurePostgreSQLDBPrivateDnsZoneId",
+          "strongType": "Microsoft.Network/privateDnsZones",
+          "description": "Private DNS Zone Identifier"
+        }
+      },
       "effect": {
         "type": "string",
         "metadata": {
@@ -1210,6 +1246,58 @@
         "parameters": {
           "privateDnsZoneId": {
             "value": "[[parameters('azureCognitiveSearchPrivateDnsZoneId')]"
+          },
+          "effect": {
+            "value": "[[parameters('effect')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "DINE-Private-DNS-Azure-SQL-Database",
+        "policyDefinitionName": "Configure-Private-DNS-Zone-Sql-Server",
+        "parameters": {
+          "privateDnsZoneId": {
+            "value": "[parameters('azureSQLDBPrivateDnsZoneId')]"
+          },
+          "effect": {
+            "value": "[[parameters('effect')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "DINE-Private-DNS-Azure-Database-MariaDB",
+        "policyDefinitionName": "Configure-Private-DNS-Zone-MariaDB",
+        "parameters": {
+          "privateDnsZoneId": {
+            "value": "[parameters('azureMariaDBPrivateDnsZoneId')]"
+          },
+          "effect": {
+            "value": "[[parameters('effect')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "DINE-Private-DNS-Azure-Database-MySQL",
+        "policyDefinitionName": "Configure-Private-DNS-Zone-MySQL",
+        "parameters": {
+          "privateDnsZoneId": {
+            "value": "[parameters('azureMySQLDBPrivateDnsZoneId')]"
+          },
+          "effect": {
+            "value": "[[parameters('effect')]"
+          }
+        },
+        "groupNames": []
+      },
+      {
+        "policyDefinitionReferenceId": "DINE-Private-DNS-Azure-Database-PostgreSQL",
+        "policyDefinitionName": "Configure-Private-DNS-Zone-PostgreSQL",
+        "parameters": {
+          "privateDnsZoneId": {
+            "value": "[parameters('azurePostgreSQLDBPrivateDnsZoneId')]"
           },
           "effect": {
             "value": "[[parameters('effect')]"
